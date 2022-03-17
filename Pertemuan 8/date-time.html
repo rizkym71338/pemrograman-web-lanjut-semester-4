@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Pertemuan 8</title>
+
+    <!-- Google Font - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- My Style -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        text-align: center;
+        gap: 30px;
+      }
+      .greeting {
+        font-size: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h1 id="greeting" class="greeting"></h1>
+      <h1>Waktu Saat ini</h1>
+      <div class="content">
+        <h2 id="date"></h2>
+        <h3 id="time"></h3>
+      </div>
+    </div>
+
+    <script>
+      var days = [
+        "Senin",
+        "Selasa",
+        "Rabu",
+        "Kamis",
+        "Jumat",
+        "Sabtu",
+        "Minggu",
+      ];
+      var Months = [
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember",
+      ];
+      var date = new Date();
+      var thisDay = days[date.getDay() - 1];
+      var thisDate = date.getDate();
+      var thisMonth = Months[date.getMonth()];
+      var thisYear = date.getFullYear();
+      var hour = date.getHours();
+      var minute = date.getMinutes();
+      var second = date.getSeconds();
+      var thisTime = hour + ":" + minute + ":" + second;
+
+      document.getElementById(
+        "date"
+      ).innerHTML = `Sekarang Adalah Hari ${thisDay}, Tanggal ${thisDate} ${thisMonth} ${thisYear}`;
+      document.getElementById("time").innerHTML = `Sekarang Jam ${thisTime}`;
+
+      // console.log(typeof hour);
+      if (hour >= 6 && hour <= 10) {
+        alert("Selamat Pagi");
+        document.getElementById("greeting").innerHTML = "Selamat Pagi";
+      }
+      if (hour >= 11 && hour <= 14) {
+        alert("Selamat Siang");
+        document.getElementById("greeting").innerHTML = "Selamat Siang";
+      } else {
+        alert("Selamat Malam");
+        document.getElementById("greeting").innerHTML = "Selamat Malam";
+      }
+    </script>
+  </body>
+</html>

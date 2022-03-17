@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pertemuan 7</title>
+</head>
+
+<body>
+  <form name="travel" style="margin-top: 150px;">
+    <table width="65%" border="1" align="center">
+      <tr>
+        <td colspan="2">
+          <div align="center" style="font-size: 50px;">--- Travel Bintang Abadi ---
+        </td>
+      </tr>
+      <tr>
+        <td width="60%">
+          <pre>
+          Nama          : <input type="text" size="20" name="inputNama">
+          tujuan        : <select name="inputTujuan" size="1">
+            <option value="Jakarta">Jakarta</option>
+            <option value="Solo">Solo</option>
+            <option value="Surabaya">Surabaya</option>
+          </select>
+          Kelas         : <select name="inputKelas" size="1">
+            <option value="Eksekutif">Eksekutif</option>
+            <option value="Bisnis">Bisnis</option>
+            <option value="Ekonomi">Ekonomi</option>
+          </select>
+          Jumlah Tiket  : <input type="text" size="11" name="inputJumlahTiket">
+          Member        : <input type="checkbox" name="inputMember">Ya
+          </pre>
+        </td>
+        <td width="40%">
+          <pre>
+          Harga Tiket   : <input type="text" size="10" name="outputTiket">
+          Sub Total     : <input type="text" size="10" name="outputSub">
+          Diskon        : <input type="text" size="10" name="outputDiskon">
+          Total Bayar   : <input type="text" size="10" name="outputTotalHarga">
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <td height="28" colspan="2">
+          <center>
+            <input type="button" value="Hitung" onclick="hitung()">
+            <input type="reset" value="Ulang">
+          </center>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+    const hitung = () => {
+      var nama = document.travel.inputNama.value;
+      var tujuan = document.travel.inputTujuan.value;
+      var kelas = document.travel.inputKelas.value;
+      var jumlahTiket = parseFloat(document.travel.inputJumlahTiket.value);
+      var member = document.travel.inputMember.value;
+      var hargaTiket = 0.0;
+      var sub = 0.0;
+      var diskon = 0.0;
+      var totalHarga = 0.0;
+
+      if (tujuan == "Jakarta" && kelas == "Eksekutif") {
+        hargaTiket = 70000;
+      } else if (tujuan == "Jakarta" && kelas == "Bisnis") {
+        hargaTiket = 40000;
+      } else if (tujuan == "Jakarta" && kelas == "Bisnis") {
+        hargaTiket = 10000;
+      } else if (tujuan == "Solo" && kelas == "Eksekutif") {
+        hargaTiket = 80000;
+      } else if (tujuan == "Solo" && kelas == "Bisnis") {
+        hargaTiket = 50000;
+      } else if (tujuan == "Solo" && kelas == "Bisnis") {
+        hargaTiket = 20000;
+      } else if (tujuan == "Surabaya" && kelas == "Eksekutif") {
+        hargaTiket = 90000;
+      } else if (tujuan == "Surabaya" && kelas == "Bisnis") {
+        hargaTiket = 60000;
+      } else if (tujuan == "Surabaya" && kelas == "Bisnis") {
+        hargaTiket = 30000;
+      } else {
+        alert("Mohon Masukan Input Dengan Benar!");
+      }
+
+      sub = jumlahTiket * hargaTiket;
+
+      if (document.travel.inputMember.checked == true) {
+        diskon = 0.1 * sub;
+      } else {
+        diskon = 0.0;
+      }
+
+      totalHarga = sub - diskon;
+      document.travel.outputTiket.value = eval(hargaTiket);
+      document.travel.outputSub.value = eval(sub);
+      document.travel.outputDiskon.value = eval(diskon);
+      document.travel.outputTotalHarga.value = eval(totalHarga);
+    };
+  </script>
+</body>
+
+</html>

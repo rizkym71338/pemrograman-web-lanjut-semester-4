@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Pertemuan 4</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: row;
+        max-width: 1024px;
+        margin: auto;
+        margin-top: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <script languange="javascript">
+      function tekan() {
+        var nimstr = document.form.nim.value;
+        var namastr = document.form.nama.value;
+        var kelaminstr = document.form.kelamin.value;
+        var agamastr = document.form.agama.value;
+        if (form.status.checked === true) {
+          var statusstr = "Kawin";
+        } else {
+          var statusstr = "Belum Kawin";
+        }
+        var jurusanstr = document.form.jurusan.value;
+        var komentarstr = document.form.komentar.value;
+        document.form.onim.value = nimstr;
+        document.form.onama.value = namastr;
+        document.form.okelamin.value = kelaminstr;
+        document.form.oagama.value = agamastr;
+        document.form.ostatus.value = statusstr;
+        document.form.ojurusan.value = jurusanstr;
+        document.form.okomentar.value = komentarstr;
+      }
+    </script>
+    <form name="form">
+      <center style="margin-top: 3rem">
+        <h1>DATA MAHASISWA</h1>
+        <h2>STMIK IKMI CIREBON</h2>
+      </center>
+      <hr />
+      <div class="container">
+        <div style="width: 50%">
+          <pre>
+        NIM               : <input type="text" size="29" name="nim">
+        Nama Mahasiswa    : <input type="text" size="29" name="nama">
+        Jenis kelamin     : <select name="kelamin" >
+          <option hidden></option>
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+        Agama             : <select name="agama">
+          <option hidden></option>
+          <option value="Islam">Islam</option>
+          <option value="Kristen">Kristen</option>
+          <option value="Buddha">Buddha</option>
+          <option value="Hindu">Hindu</option>
+        </select>
+        Status            : <input type="checkbox" name="status" id="status"><label for="status">Kawin</label>
+        Jurusan           : <select name="jurusan">
+          <option hidden></option>
+          <option value="Teknik Informatika">Teknik Informatika</option>
+          <option value="Managemen Informatika">Managemen Informatika</option>
+          <option value="Komputerisasi Akuntansi">Komputerisasi Akuntansi</option>
+          <option value="Sistem Informatika">Sistem Informatika</option>
+          <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+        </select>
+        Komentar          : <textarea name="komentar" cols="30" rows="5"></textarea>
+      </pre>
+          <br />
+          <input type="button" value="kirim" onclick="tekan()" />
+          <input type="reset" value="ulang" />
+        </div>
+        <div>
+          <h3>Data Mahasiswa STMIK IKMI CIREBON</h3>
+          <pre>
+            NIM             : <input type="text" size="29" name="onim">
+            Nama Mahasiswa  : <input type="text" size="29" name="onama">
+            Jenis Kelamin   : <input type="text" size="29" name="okelamin">
+            Agama           : <input type="text" size="29" name="oagama">
+            Status          : <input type="text" size="29" name="ostatus">
+            Jurusan         : <input type="text" size="29" name="ojurusan">
+            komentar        : <textarea name="okomentar" cols="30" rows="5"></textarea>
+          </pre>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

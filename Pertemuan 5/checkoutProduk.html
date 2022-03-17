@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Bubur Sop Ayam</title>
+    <style type="text/css">
+      body {
+        background-color: peru;
+      }
+      .container {
+        text-align: center;
+        color: black;
+
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bubur Sop Ayam Online</h1>
+      <hr />
+    </div>
+    <div class="main">
+      <form action="" name="ffrom">
+        <table>
+          <tr>
+            <td>Nama Pembeli</td>
+            <td>: <input type="text" name="pembeli" placeholder="Mochammad Fauzan Fadilah" /></td>
+          </tr>
+
+          <tr>
+            <td>Checkout</td>
+            <td>: <input type="date" id="tanggal" name="checkout" /></td>
+          </tr>
+          <tr>
+            <td>Pilihan Produk</td>
+            <br />
+
+            <td>
+              <input type="radio" name="bubur" value="Bubur Sop Ayam Kampung                     silahkan untuk membayar biaya makanan sebesar Rp. 10.000               Klik OK untuk melanjutkan order" id="sopKampung" />
+              Bubur Sop Ayam Kampung <br />
+              <input type="radio" name="bubur" value="Bubur Sop Ayam Negeri                        silahkan untuk membayar biaya makanan sebesar Rp. 8.000               Klik OK untuk melanjutkan order" id="ayamNegeri" />
+              Bubur Sop Ayam Negeri <br />
+              <input type="radio" name="bubur" value="Bubur Ayam Kampung                             silahkan untuk membayar biaya makanan sebesar Rp. 10.000               Klik OK untuk melanjutkan order" id="sopNegeri" />
+              Bubur Ayam Kampung <br />
+              <input type="radio" name="bubur" value="Bubur  Ayam Negeri                               silahkan untuk membayar biaya makanan sebesar Rp. 8.000               Klik OK untuk melanjutkan order" id="ayamKampung" />
+              Bubur Ayam Biasa
+            </td>
+          </tr>
+            <br />
+          </tr>
+          <tr>
+            <td>Pembayaran Via</td>
+            <td>: <input type="text" name="bayar" placeholder="Dana" /></td>
+          </tr>
+          <tr>
+               <td>
+                <button onclick="kirim()" id="btn1">Kirim</button>
+              </td>
+              <td>
+                <button type="reset">Reset</button>
+              </td>
+          </tr>
+        </table>
+        <script language="JavaScript">
+            function kirim() {
+        var sopKampung = document.getElementById('sopKampung');
+        var ayamNegeri = document.getElementById('ayamNegeri');
+        var sopNegeri = document.getElementById('sopNegeri');
+        var ayamKampung = document.getElementById('ayamKampung');
+
+        if (sopKampung.checked == true) {
+          alert('Terimakasih sudah order ' + sopKampung.value);
+        } else if (ayamNegeri.checked == true) alert('Terimakasih sudah order ' + ayamNegeri.value);
+        else if (sopNegeri.checked == true) alert('Terimakasih sudah order ' + sopNegeri.value);
+        else if (ayamKampung.checked == true) alert('Terimakasih sudah order ' + ayamKampung.value);
+        else alert('Proses Gagal ! Silahkan untuk memilih Makanan');
+      }
+        </script>
+      </form>
+    </div>
+  </body>
+</html>

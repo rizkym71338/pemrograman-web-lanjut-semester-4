@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pertemuan 5</title>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 25%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+      }
+
+      .input {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h2>Menghitung Luas Persegi Panjang dan Segitiga</h2>
+      <table>
+        <form name="form" method="post">
+          <tr>
+            <td>Nilai 1</td>
+            <td>
+              <input
+                type="number"
+                name="nilai1"
+                placeholder="Masukkan Nilai Disini"
+                class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Nilai 2</td>
+            <td>
+              <input
+                type="number"
+                name="nilai2"
+                placeholder="Masukkan Nilai Disini"
+                class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <center>
+              <td colspan="2">
+                <input type="radio" name="lis" value="segitiga" />
+                <label>Segitiga</label>
+                <br />
+                <input type="radio" name="lis" value="persegi" />
+                <label>Persegi Panjang</label>
+              </td>
+            </center>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button type="submit" onclick="tekan()">Kirim</button>
+              <button type="reset">Ulang</button>
+            </td>
+          </tr>
+        </form>
+      </table>
+    </center>
+  </body>
+  <script>
+    const tekan = () => {
+      var nilai1 = document.form.nilai1.value;
+      var nilai2 = document.form.nilai2.value;
+      var lis = document.form.lis.value;
+
+      if (lis == "segitiga") {
+        const hasil = 0.5 * nilai1 * nilai2;
+        alert("Hasilnya adalah : " + hasil);
+      }
+      if (lis == "persegi") {
+        const hasil = nilai1 * nilai2;
+        alert("Hasilnya adalah : " + hasil);
+      }
+    };
+  </script>
+</html>

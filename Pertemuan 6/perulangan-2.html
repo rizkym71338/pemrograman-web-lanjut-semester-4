@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pertemuan 6</title>
+
+    <!-- Google Font - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- My Style -->
+    <style>
+      * {
+        font-family: "Montserrat", sans-serif;
+      }
+      .container {
+        max-width: 1024px;
+        margin: auto;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>
+          <h1>Perulangan di Javascript!</h1>
+          <hr />
+        </h1>
+      </div>
+      <script>
+        document.writeln("<center>");
+        for ($a = 9; $a > 0; $a--) {
+          for ($i = 1; $i <= $a; $i++) {
+            document.writeln(" ");
+          }
+          for ($a1 = 10; $a1 > $a; $a1--) {
+            document.writeln("0");
+          }
+          for ($a2 = 9; $a2 > $a; $a2--) {
+            document.writeln("0");
+          }
+          document.writeln("<br>");
+        }
+        for ($b = 0; $b <= 9; $b++) {
+          for ($j = 1; $j <= $b; $j++) {
+            document.writeln(" ");
+          }
+          for ($b1 = 10; $b1 > $b; $b1--) {
+            document.writeln("0");
+          }
+          for ($b2 = 9; $b2 > $b; $b2--) {
+            document.writeln("0");
+          }
+          document.writeln("<br>");
+        }
+        document.writeln("</center>");
+      </script>
+    </div>
+  </body>
+</html>

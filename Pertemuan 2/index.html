@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pertemuan 2</title>
+    <style>
+      body {
+        background-color: darkblue;
+        font-family: Poppins, sans-serif;
+      }
+      .container {
+        margin: auto;
+        margin-top: 10%;
+      }
+      .title {
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .wrapper {
+        background-color: white;
+        width: 50%;
+        margin: auto;
+        padding: 50px;
+        border-radius: 50px;
+      }
+      .table {
+        width: 100%;
+      }
+      .text {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="title" class="title"></div>
+      <div id="wrapper" class="wrapper">
+        <table class="table text">
+          <tr>
+            <td id="title-nama" style="width: 50%"></td>
+            <td id="nama"></td>
+          </tr>
+          <tr>
+            <td id="title-nim"></td>
+            <td id="nim"></td>
+          </tr>
+          <tr>
+            <td id="title-jurusan"></td>
+            <td id="jurusan"></td>
+          </tr>
+          <tr>
+            <td id="title-kelas"></td>
+            <td id="kelas"></td>
+          </tr>
+          <tr>
+            <td id="title-kelamin"></td>
+            <td id="kelamin"></td>
+          </tr>
+          <tr>
+            <td id="title-pendidikan"></td>
+            <td id="pendidikan"></td>
+          </tr>
+          <tr>
+            <td id="title-alamat"></td>
+            <td id="alamat"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.getElementById("title").innerHTML = "My Biodata";
+    document.getElementById("nama").innerHTML = ": Rizky Maulana";
+    document.getElementById("title-nama").innerHTML = "Nama";
+    document.getElementById("nim").innerHTML = ": 41200397";
+    document.getElementById("title-nim").innerHTML = "NIM";
+    document.getElementById("jurusan").innerHTML = ": Teknik Informatika";
+    document.getElementById("title-jurusan").innerHTML = "Jurusan";
+    document.getElementById("kelas").innerHTML = ": TI-2020-P7";
+    document.getElementById("title-kelas").innerHTML = "Kelas";
+    document.getElementById("kelamin").innerHTML = ": Laki - Laki";
+    document.getElementById("title-kelamin").innerHTML = "Jenis Kelamin";
+    document.getElementById("pendidikan").innerHTML = ": SMA";
+    document.getElementById("title-pendidikan").innerHTML =
+      "Riwayat Pendidikan";
+    document.getElementById("alamat").innerHTML = ": Jl. Karanganyar Kesambi";
+    document.getElementById("title-alamat").innerHTML = "Alamat";
+  </script>
+</html>

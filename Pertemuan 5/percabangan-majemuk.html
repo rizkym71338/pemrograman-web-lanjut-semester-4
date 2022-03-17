@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pertemuan 5</title>
+</head>
+
+<body>
+    <form name="form">
+      <table border="1" align="center" width="70%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="100%" colspan="2">
+            <h2 align="center"> Penjelajah Jalanan </h2>
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            <pre>
+              Nama    : <input type="text" size="20" name="inama">
+              Tujuan  : <select name="itujuan" size=1>
+                <option value="Jakarta"> Jakarta </option>
+                <option value="Solo"> Solo </option>
+                <option value="Surabaya"> Surabaya </option></select>
+              Kelas   : <select name="ikelas" size=1>
+                <option value="Eksekutif"> Eksekutif </option>
+                <option value="Bisnis"> Bisnis </option>
+                <option value="Ekonomi"> Ekonomi </option></select> 
+              Jumlah  : <input type="text" size="20" name="ijml_tiket"> 
+              Member  : <input type ="checkbox" name="ya"> Ya </td>
+            </pre>
+          <td width="50%">
+            <pre>
+              Harga tiket :<input type="text" size="20" name="oharga"> 
+              Sub total   :<input type="text" size="20" name="osub"> 
+              Diskon      :<input type="text" size="20" name="odiskon"> 
+              Total bayar :<input type="text" size="20" name="ototbay">
+            </pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <center>
+              <input type="button" value="hitung" onClick="totalbayar()">
+              <input type="reset" value="reset">
+            </center>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+    const totalbayar = () => {
+      var nama = (document.form.inama.value);
+      var tujuan = (document.form.itujuan.value);
+      var kelas = (document.form.ikelas.value);
+      var jml_tiket = parseFloat(document.form.ijml_tiket.value);
+
+      if ((tujuan == "Jakarta") && (kelas == "Eksekutif")) { 
+        harga = 70000;
+      } else if ((tujuan == "Jakarta") && (kelas == "Bisnis")) {
+        harga = 40000;
+      } else if ((tujuan == "Jakarta") && (kelas == "Ekonomi")) {
+        harga = 100000;
+      } else if ((tujuan == "Solo") && (kelas == "Eksekutif")) {
+        harga = 80000;
+      } else if ((tujuan == "Solo") && (kelas == "Bisnis")) {
+        harga = 50000;
+      } else if ((tujuan == "Solo") && (kelas == "Ekonomi")) {
+        harga = 20000;
+      } else if ((tujuan == "Surabaya") && (kelas == "Eksekutif")) {
+        harga = 90000;
+      } else if ((tujuan == "Surabaya") && (kelas == "Bisinis")) {
+        harga = 60000;
+      } else { harga = 30000; }
+
+      sub = harga * jml_tiket;
+
+      document.form.ya.checked ? diskon = 0.10 * sub : diskon = 0.0;
+
+      totbay = sub - diskon;
+
+      document.form.oharga.value = eval(harga);
+      document.form.osub.value = eval(sub);
+      document.form.odiskon.value = eval(diskon);
+      document.form.ototbay.value = eval(totbay);
+    }
+  </script>
+</body>
+
+</html>
