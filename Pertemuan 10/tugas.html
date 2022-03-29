@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Pertemuan 10</title>
+
+    <!-- Google Font - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- My Style -->
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        max-width: 1024px;
+        margin: auto;
+      }
+      .header {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Latihan Event OnFocus dan OnBlur</h1>
+        <hr width="600" color="black" noshade size="10" />
+        <h3>R E G I S T R A S I</h3>
+        <hr color="black" noshade size="2" />
+      </div>
+      <div class="content">
+        <form name="formInput" method="get">
+          <table>
+            <tr>
+              <td width="31%">NIM</td>
+              <td width="7%">:</td>
+              <td width="62%">
+                <input
+                  type="text"
+                  name="inputNim"
+                  size="9"
+                  onfocus="window.status='Silahkan Mengisi NIM Anda';"
+                  onblur="handlerInputNim()"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td width="31%">NAMA</td>
+              <td width="7%">:</td>
+              <td width="62%">
+                <input
+                  type="text"
+                  name="inputNama"
+                  size="23"
+                  onfocus="window.status='Silahkan Mengisi Nama Anda';"
+                  onblur="handlerInputNama()"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td width="31%">ALAMAT</td>
+              <td width="7%">:</td>
+              <td width="62%">
+                <input
+                  type="text"
+                  name="inputAlamat"
+                  size="34"
+                  onfocus="window.status='Silahkan Mengisi Alamat Anda';"
+                  onblur="handlerInputAlamat()"
+                />
+              </td>
+            </tr>
+          </table>
+          <hr color="black" noshade size="2" />
+          <p>
+            <input
+              type="button"
+              value="Kirim"
+              onclick="handlerSubmit()"
+            /><input type="reset" value="Reset" />
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+      const handlerInputNim = () => {
+        document.formInput.inputNim.value == "" &&
+          alert("Anda Belum Memasukan Nim");
+      };
+      const handlerInputNama = () => {
+        document.formInput.inputNama.value == "" &&
+          alert("Anda Belum Mamasukan Nama");
+      };
+      const handlerInputAlamat = () => {
+        document.formInput.inputAlamat.value == "" &&
+          alert("Anda Belum Mamasukan Alamat");
+      };
+      const handlerSubmit = () => {
+        if (
+          document.formInput.inputNim.value != "" &&
+          document.formInput.inputNama.value != "" &&
+          document.formInput.inputAlamat.value != ""
+        ) {
+          alert("Terima Kasih Telah Mengisi Data");
+        } else {
+          alert("Mohon Data Dilengkapi");
+        }
+      };
+    </script>
+  </body>
+</html>
