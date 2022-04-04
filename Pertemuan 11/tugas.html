@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Pertemuan 11</title>
+
+    <!-- Google Font - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- My Style -->
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        max-width: 1024px;
+        margin: auto;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form
+        action="mailto:rizkym71338@gmail.com?subject=Form"
+        name="formComment"
+        method="post"
+      >
+        <table align="center">
+          <tr bgcolor="gray">
+            <td colspan="2" align="center"><h1>G u e s t B o o k</h1></td>
+          </tr>
+          <tr bgcolor="peachpuff">
+            <td>Nama Anda :</td>
+            <td><input type="text" value="" name="nama" size="30" /></td>
+          </tr>
+          <tr bgcolor="peachpuff">
+            <td>Email Anda :</td>
+            <td><input type="text" value="" name="email" size="30" /></td>
+          </tr>
+          <tr bgcolor="peachpuff">
+            <td>Komentar Anda :</td>
+            <td><textarea name="cs" cols="50" rows="5"></textarea></td>
+          </tr>
+          <tr bgcolor="orange">
+            <td colspan="2" align="center">
+              <input
+                type="button"
+                name="buttonSubmit"
+                value="Kirim"
+                onclick="formInput(this.form)"
+              />
+              <input type="reset" value="Hapus" />
+            </td>
+          </tr>
+          <tr bgcolor="gray">
+            <td colspan="2" align="center">
+              <b>Terima Kasih Telah Mengisi Guest Book</b>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <script>
+      const formInput = (form) => {
+        nameInput(form);
+        emailInput(form);
+        commentInput(form);
+        clearInput(form);
+      };
+      const clearInput = (form) => {
+        if (nameInput(form) && emailInput(form) && commentInput(form)) {
+          form.submit;
+        }
+        if (
+          nameInput(form) == false ||
+          emailInput(form) == false ||
+          commentInput(form) == false
+        ) {
+          invalidInput(form);
+        }
+      };
+      const invalidInput = (form) => {
+        var teks = "Ada Kesalahan Isian :";
+        if (nameInput(form) == false) {
+          teks += "\nNama Anda";
+        }
+        if (emailInput(form) == false) {
+          teks += "\nEmail Anda";
+        }
+        if (commentInput(form) == false) {
+          teks += "\nKomentar Anda";
+        }
+        alert(teks);
+      };
+      const nameInput = (form) => {
+        if (form.nama.value == "") {
+          return false;
+        } else {
+          return true;
+        }
+      };
+      const emailInput = (form) => {
+        if (
+          form.email.value == "" ||
+          form.email.indexOf("@", 0) == -1 ||
+          form.email.value == indexOf("." == -1)
+        ) {
+          return false;
+        } else {
+          return true;
+        }
+      };
+      const commentInput = (form) => {
+        if (form.cs.value == "") {
+          return false;
+        } else {
+          return true;
+        }
+      };
+    </script>
+  </body>
+</html>
