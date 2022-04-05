@@ -33,7 +33,7 @@
   <body>
     <div class="container">
       <form
-        action="mailto:rizkym71338@gmail.com?subject=Form"
+        action="mailto:rizkym71338@gmail.com?subject=Form Comments"
         name="formComment"
         method="post"
       >
@@ -42,15 +42,15 @@
             <td colspan="2" align="center"><h1>G u e s t B o o k</h1></td>
           </tr>
           <tr bgcolor="peachpuff">
-            <td>Nama Anda :</td>
+            <td>Nama Anda</td>
             <td><input type="text" value="" name="nama" size="30" /></td>
           </tr>
           <tr bgcolor="peachpuff">
-            <td>Email Anda :</td>
+            <td>Email Anda</td>
             <td><input type="text" value="" name="email" size="30" /></td>
           </tr>
           <tr bgcolor="peachpuff">
-            <td>Komentar Anda :</td>
+            <td>Komentar Anda</td>
             <td><textarea name="cs" cols="50" rows="5"></textarea></td>
           </tr>
           <tr bgcolor="orange">
@@ -115,7 +115,7 @@
       const emailInput = (form) => {
         if (
           form.email.value == "" ||
-          form.email.indexOf("@", 0) == -1 ||
+          (form.email.value == indexOf("@", 0)) == -1 ||
           form.email.value == indexOf("." == -1)
         ) {
           return false;
